@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <div>
       {/* Navbar */}
-      <nav className="text-xs fixed top-0 left-0 w-full bg-white shadow z-50 px-2 md:px-4 py-2 flex justify-between items-center">
+      <nav className="text-md fixed top-0 left-0 w-full bg-white shadow h-11 z-50 px-2 md:px-4 py-2 flex justify-between items-center">
         <a href='#'><h1 className="hover:text-cyan-400 duration-500" >Daniel Feldman</h1></a>
         <div className="md:hidden">
           <button

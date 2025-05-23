@@ -191,12 +191,12 @@ export default function Portfolio() {
               <img
                 src="/portfolio-profile-pic.jpg"
                 alt="Daniel Feldman portrait"
-                className="w-32 h-32 rounded-full mb-6 object-cover border-2 border-gray-300"
+                className="w-64 h-64 rounded-full mb-6 object-cover border-2 border-gray-300"
               />
-              <h2 className="text-lg font-semibold mb-2 bg-gradient-to-r text-transparent from-cyan-400 via-purple-500 to-orange-400 bg-clip-text">
+              <h2 className="text-5xl font-semibold mb-2 bg-gradient-to-r text-transparent from-cyan-400 via-purple-500 to-orange-400 bg-clip-text">
                 Hi, I'm Daniel Feldman.
               </h2>
-              <p className="text-sm text-gray-600 max-w-xl">
+              <p className="text-2xl text-gray-600 max-w-xl">
                 Software Engineering Student passionate about machine learning,
                 full stack development, and elegant digital solutions.
               </p>
@@ -205,18 +205,18 @@ export default function Portfolio() {
 
           {/* About */}
           <section id="about" className="px-4 md:px-6 py-16 max-w-4xl mx-auto">
-            <h3 className="text-lg font-semibold mb-6 text-center text-gray-900">
+            <h3 className="text-3xl font-semibold mb-6 text-left text-gray-900">
               About Me
             </h3>
             <div className="bg-white rounded-lg shadow-lg px-8 py-8">
-              <p className="text-sm text-gray-600 mb-3">
+              <p className="text-lg text-gray-600 mb-3">
                 I'm a Software Engineering student at Braude College of
                 Engineering, with a current GPA of 86 and two semesters on the
                 Dean's List. I'm passionate about full-stack web development,
                 machine learning, and building real-world apps that deliver
                 value.
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-lg text-gray-600">
                 I have hands-on experience in React, Next.js, Python, MongoDB,
                 and Firebase. I enjoy solving tough problems, working in teams,
                 and constantly pushing myself to learn more.
@@ -229,13 +229,13 @@ export default function Portfolio() {
             id="projects"
             className="px-4 md:px-6 py-16 max-w-4xl mx-auto"
           >
-            <h3 className="text-lg font-semibold text-center mb-6 text-gray-900">
+            <h3 className="text-3xl font-semibold text-left mb-6 text-gray-900">
               Projects
             </h3>
             <div className="flex justify-center space-x-4 mb-6">
               <button
                 onClick={() => setActiveTab("personal")}
-                className={`px-3 py-1.5 rounded text-xs font-medium ${
+                className={`px-3 py-1.5 rounded text-lg font-medium ${
                   activeTab === "personal"
                     ? "bg-gray-800 text-white"
                     : "bg-white border border-gray-200 text-gray-600"
@@ -245,7 +245,7 @@ export default function Portfolio() {
               </button>
               <button
                 onClick={() => setActiveTab("school")}
-                className={`px-3 py-1.5 rounded text-xs font-medium ${
+                className={`px-3 py-1.5 rounded text-lg font-medium ${
                   activeTab === "school"
                     ? "bg-gray-800 text-white"
                     : "bg-white border border-gray-200 text-gray-600"
@@ -261,13 +261,13 @@ export default function Portfolio() {
                   className="bg-white rounded-lg shadow-md p-5 hover:scale-101 hover:shadow-lg duration-150 cursor-pointer"
                   onClick={() => openProjectOverlay(proj)}
                 >
-                  <h4 className="text-sm font-semibold mb-2 text-gray-900">
+                  <h4 className="text-xl font-semibold mb-2 text-gray-900">
                     {proj.title}
                   </h4>
-                  <p className="mb-3 text-xs text-gray-600">
+                  <p className="mb-3 text-lg text-gray-600">
                     {proj.description}
                   </p>
-                  <div className="text-xs text-blue-600 hover:underline">
+                  <div className="text-lg text-blue-600 hover:underline">
                     Click to view details →
                   </div>
                 </div>
@@ -280,29 +280,30 @@ export default function Portfolio() {
             id="contact"
             className="px-4 md:px-6 py-16 max-w-4xl mx-auto"
           >
-            <div className="bg-white rounded-lg shadow-lg px-8 py-6 text-center">
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">
+            <h3 className="text-3xl font-semibold mb-3 text-gray-900">
                 Contact
               </h3>
-              <p className="mb-3 text-sm text-gray-600">
+            <div className="bg-white rounded-lg shadow-lg px-8 py-6 text-center">
+              
+              <p className="mb-3 text-lg text-gray-600">
                 Want to connect or collaborate? Drop me a line.
               </p>
               <a
                 href="mailto:daniel.feldman.contact@gmail.com"
-                className="text-sm text-blue-600 hover:underline"
+                className="text-lg text-blue-600 hover:underline"
               >
                 daniel.feldman.contact@gmail.com
               </a>
               <div className="mt-3 space-x-4">
                 <a
                   href="https://linkedin.com/in/dany-feldman"
-                  className="text-xs text-blue-600 hover:underline"
+                  className="text-lg text-blue-600 hover:underline"
                 >
                   LinkedIn
                 </a>
                 <a
                   href="https://github.com/DanielFeldman1"
-                  className="text-xs text-blue-600 hover:underline"
+                  className="text-lg text-blue-600 hover:underline"
                 >
                   GitHub
                 </a>
@@ -311,7 +312,7 @@ export default function Portfolio() {
           </section>
 
           {/* Footer */}
-          <footer className="text-center py-4 text-xs text-gray-400 px-4">
+          <footer className="text-center py-4 text-lg text-gray-400 px-4">
             &copy; {new Date().getFullYear()} Daniel Feldman. All rights
             reserved.
           </footer>
