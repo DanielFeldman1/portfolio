@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-
+import Image from "next/image";
 const projects = {
   personal: [
     {
@@ -11,6 +11,12 @@ const projects = {
       github: "https://github.com/DanielFeldman1/folder-organizer.git",
       details: "Utilizes the OS library in python for file transfers.",
       technologies: ["Python", "OS Module"],
+      preview: "/folder-organizer-preview.png",
+      images: [
+        "/folder-organizer1.png",
+        "/folder-organizer2.png",
+        "/folder-organizer3.png",
+      ],
     },
   ],
   school: [
@@ -118,7 +124,7 @@ export default function Portfolio() {
               {/* Close button */}
               <button
                 onClick={closeProjectOverlay}
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold z-10 w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full"
+                className="hover:cursor-pointer absolute top-4 right-4 text-gray-400 hover:text-red-400 text-2xl font-bold z-10 w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full"
               >
                 ×
               </button>
@@ -126,56 +132,74 @@ export default function Portfolio() {
               {/* Scrollable Modal body */}
               <div className="overflow-y-auto max-h-[90vh] scrollbar-hide">
                 <div className="p-8">
-                  <h2 className="text-md font-bold text-gray-900 mb-4 pr-8">
+                  <h2 className="text-xl font-bold text-gray-900 mb-4 pr-8">
                     {selectedProject.title}
                   </h2>
 
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
                         Project Overview
                       </h3>
-                      <p className="text-gray-600 text-xs leading-relaxed">
+                      <p className="text-gray-600 text-md leading-relaxed">
                         {selectedProject.details}
                       </p>
                     </div>
-
+                    {selectedProject.images && (
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                          Media
+                        </h3>
+                        {selectedProject.images.map((img, idx) => (
+                          <div key={idx} className="py-2">
+                            <h4 className="py-2">Image #{idx + 1}:</h4>
+                            <Image
+                              src={img}
+                              width="500"
+                              height="500"
+                              alt="img"
+                              className="rounded-xs"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     <div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         Technologies Used
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.technologies?.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-md font-medium"
                           >
                             {tech}
                           </span>
                         ))}
                       </div>
                     </div>
-                      {selectedProject.link && (
-                        <div>
-                          <a
-                            href={selectedProject.link}
-                            className="hover:text-cyan-400 duration-500"
-                          >
-                            Live Demo
-                          </a>
-                        </div>
-                      )}
+                    {selectedProject.link && (
+                      <div>
+                        <a
+                          href={selectedProject.link}
+                          className="hover:text-cyan-400 duration-500"
+                        >
+                          Live Demo
+                        </a>
+                      </div>
+                    )}
 
-                      {selectedProject.github && (
-                        <div>
-                          <a
-                            href={selectedProject.github}
-                            className="hover:text-cyan-400 duration-500"
-                          >
-                            View on GitHub
-                          </a>
-                        </div>
-                      )}
+                    {selectedProject.github && (
+                      <div>
+                        <a
+                          href={selectedProject.github}
+                          className="hover:text-cyan-400 duration-500"
+                        >
+                          View on GitHub
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -200,6 +224,40 @@ export default function Portfolio() {
                 Software Engineering Student passionate about machine learning,
                 full stack development, and elegant digital solutions.
               </p>
+              <div className="pt-4 grid grid-cols-2 gap-4">
+                <a
+                  href="https://linkedin.com/in/dany-feldman"
+                  className="flex items-center flex-col text-gray-300 hover:text-cyan-400 duration-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="currentColor"
+                    className="bi bi-linkedin"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                  </svg>
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/DanielFeldman1"
+                  className="flex flex-col items-center text-gray-300 hover:text-purple-400 duration-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="currentColor"
+                    className="bi bi-github"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
             </div>
           </section>
 
@@ -238,7 +296,7 @@ export default function Portfolio() {
                 className={`px-3 py-1.5 rounded text-lg font-medium ${
                   activeTab === "personal"
                     ? "bg-gray-800 text-white"
-                    : "bg-white border border-gray-200 text-gray-600"
+                    : "bg-white border border-gray-200 text-gray-600 hover:cursor-pointer"
                 }`}
               >
                 Personal
@@ -248,7 +306,7 @@ export default function Portfolio() {
                 className={`px-3 py-1.5 rounded text-lg font-medium ${
                   activeTab === "school"
                     ? "bg-gray-800 text-white"
-                    : "bg-white border border-gray-200 text-gray-600"
+                    : "bg-white border border-gray-200 text-gray-600 hover:cursor-pointer"
                 }`}
               >
                 School
@@ -258,18 +316,32 @@ export default function Portfolio() {
               {projects[activeTab].map((proj, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg shadow-md p-5 hover:scale-101 hover:shadow-lg duration-150 cursor-pointer"
+                  className="bg-white rounded-lg shadow-md p-5 hover:scale-101 hover:shadow-lg duration-300 cursor-pointer"
                   onClick={() => openProjectOverlay(proj)}
                 >
+                  {proj.preview && (
+                    <div className="relative w-full h-56 mb-4">
+                      <Image
+                        src={proj.preview}
+                        alt={proj.title}
+                        fill
+                        className="rounded-md shadow-sm object-cover"
+                      />
+                    </div>
+                  )}
                   <h4 className="text-xl font-semibold mb-2 text-gray-900">
                     {proj.title}
                   </h4>
                   <p className="mb-3 text-lg text-gray-600">
                     {proj.description}
                   </p>
-                  <div className="text-lg text-blue-600 hover:underline">
-                    Click to view details →
-                  </div>
+                  {proj.github && <a
+                    href={proj.github}
+                    onClick={(e) => e.stopPropagation()}
+                    className="hover:text-purple-400 duration-500 text-md font-semibold"
+                  >
+                    View on GitHub.
+                  </a>}
                 </div>
               ))}
             </div>
@@ -281,10 +353,9 @@ export default function Portfolio() {
             className="px-4 md:px-6 py-16 max-w-4xl mx-auto"
           >
             <h3 className="text-3xl font-semibold mb-3 text-gray-900">
-                Contact
-              </h3>
+              Contact
+            </h3>
             <div className="bg-white rounded-lg shadow-lg px-8 py-6 text-center">
-              
               <p className="mb-3 text-lg text-gray-600">
                 Want to connect or collaborate? Drop me a line.
               </p>
@@ -294,20 +365,6 @@ export default function Portfolio() {
               >
                 daniel.feldman.contact@gmail.com
               </a>
-              <div className="mt-3 space-x-4">
-                <a
-                  href="https://linkedin.com/in/dany-feldman"
-                  className="text-lg text-blue-600 hover:underline"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/DanielFeldman1"
-                  className="text-lg text-blue-600 hover:underline"
-                >
-                  GitHub
-                </a>
-              </div>
             </div>
           </section>
 
