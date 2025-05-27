@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ViewCounter from "@/components/ViewCounter";
 const projects = {
   personal: [
     {
@@ -431,6 +432,7 @@ export default function Portfolio() {
           <footer className="text-center py-4 text-lg text-gray-400 px-4">
             &copy; {new Date().getFullYear()} Daniel Feldman. All rights
             reserved.
+            <ViewCounter/>
           </footer>
         </div>
       </div>
