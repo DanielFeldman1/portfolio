@@ -25,7 +25,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-lg md:max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-lg md:max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border-1 border-gray-100">
       <h3 className="text-lg font-semibold mb-4">Say Something</h3>
       <form
         action="https://formspree.io/f/mpwraoaw"
