@@ -4,6 +4,11 @@ const contributions = {
     link: "https://github.com/firstcontributions/first-contributions",
     description: "Added my name to the Contributors.md file.",
   },
+  "code-contributions": {
+    name: "code-contributions",
+    link: "https://github.com/roshanjossey/code-contributions",
+    description: "Added an HTML card with my data to the contributers list.",
+  },
 };
 export default function OpenSourceContributions() {
   return (
@@ -14,7 +19,7 @@ export default function OpenSourceContributions() {
       <div className="bg-white rounded-lg shadow-lg p-8">
         {Object.keys(contributions).map((item, i) => (
           <div key={i} className="p-2 mt-2">
-            <h4 className="text-2xl font-semibold">{item}</h4>
+            <h4 className="text-2xl font-semibold">{`${i+1}. ${item}`}</h4>
             <a
               href={contributions[item].link}
               className="flex flex-row items-center gap-2 text-gray-400 hover:text-amber-300 duration-500"
@@ -34,7 +39,9 @@ export default function OpenSourceContributions() {
             </a>
 
             <h4 className="font-semibold pt-2 text-xl">Description:</h4>
-            <p className="text-lg text-gray-600">{contributions[item].description}</p>
+            <p className="text-lg text-gray-600">
+              {contributions[item].description}
+            </p>
           </div>
         ))}
       </div>
