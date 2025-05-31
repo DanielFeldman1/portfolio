@@ -15,7 +15,7 @@ export default function ContactForm() {
   }, []);
 
   if (!hasHydrated) return <div className="text-center text-sm text-gray-400">Loading form…</div>;
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -43,7 +43,7 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Your name"
           />
         </div>
@@ -59,7 +59,7 @@ export default function ContactForm() {
             required
             value={formData._replyto}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="your.email@example.com"
           />
         </div>
@@ -75,14 +75,14 @@ export default function ContactForm() {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-vertical"
+            className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-500 resize-vertical"
             placeholder="Your message..."
           />
         </div>
 
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:cursor-pointer transition-colors"
+          className="w-full px-4 py-2 bg-white text-blue-500 border-1 border-blue-500 rounded-3xl hover:text-white hover:bg-blue-500 hover:cursor-pointer transition-colors duration-500"
         >
           Send Message
         </button>

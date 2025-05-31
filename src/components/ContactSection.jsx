@@ -7,12 +7,16 @@ export default function () {
         <h3 className="text-3xl font-semibold mb-3 text-gray-900">Contact</h3>
         <div className="bg-white gap-2 grid grid-cols-1 md:grid-cols-2 rounded-lg shadow-lg px-8 py-6 space-x-2 space-y-8">
           <div className="items-center space-y-6">
-            <h3 className='text-lg font-semibold'>Get in touch</h3>
-            <p >Lorem ipsum texti text</p>
+            <h3 className="text-lg font-semibold">Get in touch</h3>
+            <p className="text-gray-600">
+              Whether you're hiring, building something exciting, or just want
+              to say hello, I'm always open to new opportunities and meaningful
+              collaborations. Feel free to reach out. I’d love to hear from you!
+            </p>
             <a
               href="mailto:daniel.feldman.contact@gmail.com"
               id="emailSVG"
-              className="flex flex-row gap-3 items-center text-gray-500 hover:text-cyan-500 duration-500"
+              className="flex flex-row gap-3 items-center text-gray-400 hover:text-cyan-500 duration-500"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +32,7 @@ export default function () {
             </a>
             <div
               id="locationSVG"
-              className="flex flex-row gap-3 text-gray-500 items-center"
+              className="flex flex-row gap-3 text-gray-400 items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
