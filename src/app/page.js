@@ -5,6 +5,7 @@ import ViewCounter from "@/components/ViewCounter";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import OpenSourceContributions from "@/components/OpenSourceContributions";
 const projects = {
   personal: [
     {
@@ -57,6 +58,7 @@ const projects = {
         "Vercel",
         "Lazy Loading",
       ],
+      preview: "/artmarket1.png",
       challenges:
         "Implementing efficient lazy loading for large image galleries while maintaining smooth user experience and SEO optimization.",
     },
@@ -74,6 +76,7 @@ const projects = {
         "APIs",
         "Google Colab",
       ],
+      preview: "/azure-search1.png",
       challenges:
         "Handling large-scale web scraping while respecting rate limits and building an efficient indexing system for fast search results.",
     },
@@ -213,9 +216,9 @@ export default function Portfolio() {
 
         {/* Main content with blur when overlay is open */}
         <div className={selectedProject ? "blur-sm" : ""}>
-          <HeroSection/>
+          <HeroSection />
 
-          <AboutSection/>
+          <AboutSection />
 
           {/* Projects */}
           <section
@@ -276,15 +279,25 @@ export default function Portfolio() {
                       onClick={(e) => e.stopPropagation()}
                       className="hover:text-purple-400 duration-500 text-md font-semibold"
                     >
-                      View on GitHub.
+                      View on GitHub
+                    </a>
+                  )}
+                  <br></br>
+                  {proj.link && (
+                    <a
+                      href={proj.link}
+                      onClick={(e) => e.stopPropagation()}
+                      className="hover:text-orange-400 duration-500 text-md font-semibold"
+                    >
+                      Live Demo
                     </a>
                   )}
                 </div>
               ))}
             </div>
           </section>
-
-          <ContactSection/>
+          <OpenSourceContributions />
+          <ContactSection />
 
           {/* Footer */}
           <footer className="text-center py-4 text-lg text-gray-400 px-4">
