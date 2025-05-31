@@ -5,7 +5,7 @@ export default function () {
       {/* Contact */}
       <section id="contact" className="px-4 md:px-6 py-16 max-w-4xl mx-auto">
         <h3 className="text-3xl font-semibold mb-3 text-gray-900">Contact</h3>
-        <div className="bg-white gap-2 grid grid-cols-1 md:grid-cols-2 rounded-lg shadow-lg px-8 py-6 space-x-2 space-y-8">
+        <div className="bg-white gap-2 grid grid-cols-1 md:grid-cols-2 rounded-lg shadow-lg px-8 py-6 space-x-2 space-y-8 border-1 border-gray-100">
           <div className="items-center space-y-6">
             <h3 className="text-lg font-semibold">Get in touch</h3>
             <p className="text-gray-600">
@@ -48,17 +48,6 @@ export default function () {
             </div>
           </div>
           <ContactForm />
-
-          {/*
-          <p className="mb-3 text-lg text-gray-600">
-            Get in touch.
-          </p>
-          <a
-            href="mailto:daniel.feldman.contact@gmail.com"
-            className="text-lg text-blue-600 hover:underline"
-          >
-            daniel.feldman.contact@gmail.com
-          </a>*/}
         </div>
       </section>
     </>
