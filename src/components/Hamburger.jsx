@@ -44,6 +44,13 @@ export default function HamburgerComponent() {
             Projects
           </a>
           <a
+            href="#openSource"
+            className="block py-2 border-b hover:text-pink-400 duration-500"
+            onClick={() => setOpen(false)}
+          >
+            Open-Source Contributions
+          </a>
+          <a
             href="#contact"
             className="block py-2 hover:text-orange-400 duration-500"
             onClick={() => setOpen(false)}

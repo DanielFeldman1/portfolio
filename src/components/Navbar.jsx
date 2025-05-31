@@ -15,8 +15,11 @@ export default function Navbar() {
           <a href="#about" className="hover:text-cyan-400 duration-500">
             About
           </a>
-          <a href="#projects" className="hover:text-purple-500 duration-500">
+          <a href="#projects" className="hover:text-purple-400 duration-500">
             Projects
+          </a>
+          <a href="#openSource" className="hover:text-pink-400 duration-500">
+            Open-Source Contributions
           </a>
           <a href="#contact" className="hover:text-orange-400 duration-500">
             Contact
